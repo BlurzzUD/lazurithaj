@@ -33,6 +33,15 @@
             const now = new Date().getTime();
             const distance = eventDate - now;
 
+            console.log("Event Date: ", eventDate);
+            console.log("Now: ", now);
+            console.log("Distance: ", distance);
+
+            if (isNaN(eventDate)) {
+                document.getElementById("countdown").innerHTML = "Invalid event date";
+                return;
+            }
+
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
